@@ -1,0 +1,63 @@
+{% extends 'Home/base.html' %}
+
+{% block main %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8"> <!-- تغییر عرض کلاس به 8 -->
+            <center>
+                <img src="/media/Add a heading.png" style="width: 300px;" alt="">
+            </center>
+            <form method="get" class="google-search-form mt-5"> <!-- اضافه کردن کلاس google-search-form -->
+                {{ search_form }}
+                <button type="submit" class="google-search-button"><i class="fa-sharp fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button> <!-- استفاده از ایکون ذره‌بین به عنوان دکمه -->
+            </form>
+        </div>
+    </div>
+    
+
+        <!-- <h2 class="mt-4">Search Results</h2> -->
+        {% if result %}
+            <div class="row mt-3">
+            {% for person in result %}
+                <div class="col-md-12">
+                    <div class="card">
+                            <ul>
+                                <p>
+                                    {% for word in person.name.split %}
+                                        {% if word.lower == search_query.lower %}
+                                            <span class="highlight">{{ word }}</span>
+                                        {% else %}
+                                        name : {{ word }}
+                                        {% endif %}
+                                    {% endfor %}
+                                    {{ person.family }}
+                                </p>
+
+                                <p>
+                                    {% for word in person.email.split %}
+                                        {% if word.lower == search_query.lower %}
+                                            <span class="highlight">{{ word }}</span>
+                                        {% else %}
+                                         email : {{ word }}
+                                        {% endif %}
+                                    {% endfor %}
+                                </p>
+                                <p>
+                                    {% if person.phone.lower == search_query.lower %}
+                                        <span class="highlight">{{ person.phone }}</span>
+                                    {% else %}
+                                      phone : {{ person.phone }}
+                                    {% endif %}
+                                </p>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        {% else %}
+            <!-- <p>No results found.</p> -->
+        {% endif %}
+    </div>
+{% endblock main %}

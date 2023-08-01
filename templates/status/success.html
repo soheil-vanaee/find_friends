@@ -1,0 +1,79 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Your Page Title{% endblock title %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.22.0/font/bootstrap-icons.css">
+    <!-- فونت استایل گوگل -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS خود را اضافه کنید -->
+    <style>
+        /* استایل سرچ باکس و دکمه سرچ */
+        .google-search-form {
+            display: flex;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+        }
+        .google-search-form input {
+            flex: 1;
+            border: none;
+            padding: 8px 16px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .google-search-button {
+            background: rgb(27, 83, 48);
+            border: none;
+            padding: 0 16px;
+            cursor: pointer;
+        }
+
+        /* استایل هایلایت کلمه جستجو شده */
+        .highlight {
+            background-color: rgb(27, 83, 48);
+        }
+
+        /* استایل هایلایت کلمه جستجو شده در صفحه اصلی نتایج */
+        .card {
+            margin-bottom: 20px;
+            padding: 2px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        /* استایل فونت استایل گوگل */
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="text-center">
+                        <h1 class="display-1 text-success">&#10004;</h1>
+                        <h2 class="mt-4">Successful!</h2>
+                        <p class="lead">Information has been saved successfully.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
